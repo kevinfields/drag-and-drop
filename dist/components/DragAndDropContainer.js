@@ -19,6 +19,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 const OrderObjectContainer = props => {
   const [highlit, setHighlit] = (0, _react.useState)(false);
+  const colorName = props.colorName ? props.colorName : 'lightblue';
 
   const dropItem = () => {
     setHighlit(false);
@@ -27,9 +28,9 @@ const OrderObjectContainer = props => {
 
   return /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      backgroundColor: highlit ? 'lightblue' : 'white'
+      backgroundColor: highlit ? colorName : 'white'
     },
-    className: props.slotClassName ? props.slotClassName : null,
+    className: props.slotClassName,
     onDrop: () => dropItem(),
     onDragOver: e => e.preventDefault(),
     onDragEnter: () => setHighlit(true),
@@ -38,7 +39,7 @@ const OrderObjectContainer = props => {
     item: props.item,
     dragObject: () => props.dragObject(props.item),
     dragging: props.dragging,
-    objectClassName: props.objectClassName ? props.objectClassName : null,
+    objectClassName: props.objectClassName,
     children: props.children
   }));
 };

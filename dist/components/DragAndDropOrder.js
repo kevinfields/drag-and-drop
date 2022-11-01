@@ -67,15 +67,17 @@ const DragAndDropOrder = props => {
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: props.containerClassName ? props.containerClassName : null
-  }, props.order.map(item => /*#__PURE__*/_react.default.createElement(_DragAndDropContainer.default, {
+    className: props.containerClassName
+  }, props.order.map((item, key) => /*#__PURE__*/_react.default.createElement(_DragAndDropContainer.default, {
     order: props.order,
+    key: key,
     item: item,
     placeHere: newItem => adjustOrder(newItem, item),
     dragObject: () => setDragging(item),
     dragging: dragging,
-    slotClassName: props.slotClassName ? props.slotClassName : null,
-    objectClassName: props.objectClassName ? props.objectClassName : null,
+    slotClassName: props.slotClassName,
+    objectClassName: props.objectClassName,
+    colorName: props.colorName,
     children: props.children
   })));
 };
