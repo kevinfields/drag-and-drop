@@ -64,9 +64,10 @@ const DragAndDropOrder = (props) => {
     <div
       className={props.containerClassName ? props.containerClassName : null}
     >
-      {props.order.map(item => (
+      {props.order.map((item, key) => (
         <DragAndDropContainer
           order={props.order} 
+          key={key}
           item={item} 
           placeHere={(newItem) => adjustOrder(newItem, item)} 
           dragObject={() => setDragging(item)}
