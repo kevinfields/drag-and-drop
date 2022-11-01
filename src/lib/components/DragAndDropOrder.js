@@ -62,7 +62,7 @@ const DragAndDropOrder = (props) => {
 
   return (
     <div
-      className={props.containerClassName ? props.containerClassName : null}
+      className={props.containerClassName}
     >
       {props.order.map((item, key) => (
         <DragAndDropContainer
@@ -72,8 +72,9 @@ const DragAndDropOrder = (props) => {
           placeHere={(newItem) => adjustOrder(newItem, item)} 
           dragObject={() => setDragging(item)}
           dragging={dragging}
-          slotClassName={props.slotClassName ? props.slotClassName : null}
-          objectClassName={props.objectClassName ? props.objectClassName : null}
+          slotClassName={props.slotClassName}
+          objectClassName={props.objectClassName}
+          colorName={props.colorName}
           children={props.children}
         />
       ))}
